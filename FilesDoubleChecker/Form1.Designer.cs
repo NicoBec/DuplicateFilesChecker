@@ -44,6 +44,7 @@
             this.Folder1Txt.Name = "Folder1Txt";
             this.Folder1Txt.Size = new System.Drawing.Size(530, 20);
             this.Folder1Txt.TabIndex = 0;
+            this.Folder1Txt.Text = "D:\\Video";
             // 
             // Folder2Txt
             // 

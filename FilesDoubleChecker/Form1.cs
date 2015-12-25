@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilesDoubleChecker.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +37,11 @@ namespace FilesDoubleChecker
 
         private void GoBtn_Click(object sender, EventArgs e)
         {
-           
+            string Path1 = Folder1Txt.Text;
+            string Path2 = Folder2Txt.Text;
+
+            FolderFilesChecker Dir = new FolderFilesChecker();
+            Dir.scanFolder(Path1);
         }
 
         private void Folder2Btn_Click(object sender, EventArgs e)

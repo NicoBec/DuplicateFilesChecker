@@ -8,5 +8,13 @@ namespace FilesDoubleChecker.Domain
 {
     class FolderFilesChecker
     {
+        public void scanFolder(string Path)
+        {
+            FolderObj Fold = new FolderObj();
+            Fold.scanFolders(Path);
+
+            var t = FilesStore.ListOfFiles;
+            var ext = (FilesStore.ListOfFiles.Select(x => x.Extention).ToList()).Distinct();
+        }
     }
 }

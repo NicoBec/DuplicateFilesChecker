@@ -47,6 +47,7 @@
     <Compile Include="Domain\FileObj.cs" />
     <Compile Include="Domain\FolderFilesChecker.cs" />
     <Compile Include="Domain\FolderObj.cs" />
+    <Compile Include="Domain\FilesStore.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
