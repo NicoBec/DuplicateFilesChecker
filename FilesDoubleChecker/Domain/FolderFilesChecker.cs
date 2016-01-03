@@ -14,7 +14,7 @@ namespace FilesDoubleChecker.Domain
             Fold.scanFolders(Path);
 
             var t = FilesStore.ListOfFiles;
-            var ext = (FilesStore.ListOfFiles.Select(x => x.Extention).ToList()).Distinct();
+            var ext = (FilesStore.ListOfFiles.Select(x => x.Extension).ToList()).Distinct();
         }
     }
 }

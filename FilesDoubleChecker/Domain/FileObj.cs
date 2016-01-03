@@ -11,8 +11,8 @@ namespace FilesDoubleChecker.Domain
     {
         public string fullPath = "";
         public string FileName = "";
-        public string Extention = "";
-        public int size = 0;
+        public string Extension = "";
+        public long size = 0;
         FileInfo oFileInfo = null;
         public void initFilesInfo()
         {
@@ -20,13 +20,24 @@ namespace FilesDoubleChecker.Domain
             {
                 oFileInfo = new FileInfo(fullPath);
                 FileName = oFileInfo.Name;
+                size = oFileInfo.Length;
                 if (oFileInfo.Extension.Length > 1)
                 {
-                    Extention = oFileInfo.Extension.Substring(1).ToUpper();
+                    Extension = oFileInfo.Extension.Substring(1).ToUpper();
+                   
                 }
 
             }
         }
-
+        public string toString()
+        {
+            string delim = FilesStore.CSVDelimenator;
+            return fullPath.RemoveCSVDeliminator() + delim + FileName.RemoveCSVDeliminator() + delim + Extension.RemoveCSVDeliminator() + delim + size + delim + oFileInfo.CreationTime.ToString().RemoveCSVDeliminator();
+        }
+        public string toStringHeader()
+        {
+            string delim = FilesStore.CSVDelimenator;
+            return "fullPath" + delim + "FileName" + delim + "Extension" + delim + "size" + delim + "CreationTime";
+        }
     }
 }

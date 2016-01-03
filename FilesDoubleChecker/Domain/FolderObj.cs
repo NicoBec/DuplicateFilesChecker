@@ -27,7 +27,7 @@ namespace FilesDoubleChecker.Domain
                 {
                     item.initFilesInfo();
                 }
-                FilesStore.ListOfFiles.AddRange(Files.Where(x => FilesStore.videoExtentionList.Contains(x.Extention)));
+                FilesStore.ListOfFiles.AddRange(Files.Where(x => FilesStore.videoExtentionList.Contains(x.Extension)));
 
                 var Dirs = Directory.GetDirectories(path);
                 Folders = Dirs.Select(x => new FolderObj() { path = x }).ToList();
